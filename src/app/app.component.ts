@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';  // Import RouterModule
+import { ContactBookComponent } from './contact-book/contact-book.component';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [RouterModule, RouterOutlet, ContactBookComponent],  // Add RouterModule here
+  templateUrl: './app.component.html'
 })
-
 export class AppComponent {
-  title = 'Contact Book';
+  title!: string;
 }

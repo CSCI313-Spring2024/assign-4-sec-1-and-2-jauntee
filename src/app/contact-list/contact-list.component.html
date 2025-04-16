@@ -1,1 +1,5 @@
-<p>contact-list works!</p>
+<div *ngFor="let contact of contacts; let i = index">
+    <p>{{ contact.fName }} {{ contact.lName }}</p>
+    <button class="btn btn-sm btn-primary me-2" (click)="onEdit(contact)">Edit</button>
+    <button class="btn btn-sm btn-danger" (click)="onDelete(contact)">Delete</button>
+  </div>
