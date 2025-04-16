@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Contact } from '../data/contacts';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-contact-book',
-  imports: [],
+  selector: 'app-contact-card',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './contact-book.component.html',
-  styleUrl: './contact-book.component.css'
+  styleUrls: ['./contact-book.component.css']
 })
-export class ContactBookComponent {
-
+export class ContactCardComponent {
+  @Input() contact!: Contact;
+  @Output() delete = new EventEmitter<number>();
 }

@@ -28,3 +28,12 @@ export let CONTACTS = [
         email: 'charlIXCX@example.com'
       }
   ];
+
+  export interface Contact {
+    id: number;
+    fName: string;
+    lName: string;
+    phoneNumber: string;
+    email: string;
+  }
+  
