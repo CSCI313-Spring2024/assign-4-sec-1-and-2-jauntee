@@ -1,12 +1,17 @@
-<app-contact-form
-  [contactToEdit]="contactToEdit()"
-  (submitContact)="onSubmit($event)">
-</app-contact-form>
+<div class="container mt-4">
+  <h2 class="mb-4">Contacts</h2>
 
-<hr>
+  <app-contact-form
+    [contact]="selectedContact"
+    [isEditMode]="isEditMode"
+    (save)="onSave($event)">
+  </app-contact-form>
+  
+  <hr />
 
-<app-contact-list
-  [contacts]="contacts()"
-  (editContact)="onEdit($event)"
-  (deleteContact)="onDelete($event)">
-</app-contact-list>
+  <app-contact-list
+    [contacts]="contacts"
+    (edit)="onEdit($event)"
+    (delete)="onDelete($event)">
+  </app-contact-list>
+</div>

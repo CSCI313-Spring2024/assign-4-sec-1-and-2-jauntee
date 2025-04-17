@@ -1,3 +1,42 @@
-.mb4 {
-    font-family: "Lucida Console", monospace;
-  }
+.container {
+  max-width: 800px;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.h2 {
+  display: block;
+  color: #0f6580e8;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+app-contact-form {
+  display: block;
+  background: #ffffff;
+  padding: 1.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+}
+
+app-contact-list {
+  display: block;
+  margin-top: 2rem;
+}
+
+button.btn {
+  transition: all 0.2s ease-in-out;
+}
+
+button.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

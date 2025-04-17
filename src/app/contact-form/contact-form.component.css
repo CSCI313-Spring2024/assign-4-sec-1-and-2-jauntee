@@ -1,0 +1,29 @@
+form {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+  }
+  
+  input.form-control {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+  }
+  
+  button[type="submit"] {
+    background-color: #0d6efd;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0b5ed7;
+  }

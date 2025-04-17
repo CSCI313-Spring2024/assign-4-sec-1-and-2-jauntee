@@ -1,15 +1,21 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Contact } from '../models/contact.model';
+import { FormsModule } from '@angular/forms'; // ✅ Needed for ngModel
+import { CommonModule } from '@angular/common';
+import { Contact } from '../contact.model';
 
 @Component({
   selector: 'app-contact-form',
-  templateUrl: './contact-form.component.html',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './contact-form.component.html'
 })
 export class ContactFormComponent {
-  @Input() contactToEdit: Contact | null = null;  // Input to bind to contact data
-  @Output() submitContact = new EventEmitter<Contact>();  // Output to send back the form data
+  @Input() contact: Contact | null = null;
+  @Input() isEditMode = false;
+  @Output() save = new EventEmitter<Contact>();
 
-  contact: Contact = {
+  localContact: Contact = {
+    id: 0,
     fName: '',
     lName: '',
     phoneNumber: '',
@@ -17,14 +23,19 @@ export class ContactFormComponent {
   };
 
   ngOnChanges() {
-    // When contactToEdit changes, populate the form with contact details
-    if (this.contactToEdit) {
-      this.contact = { ...this.contactToEdit }; // Clone the contact to avoid direct mutation
+    if (this.contact) {
+      this.localContact = { ...this.contact };
     }
   }
 
-  submit() {
-    this.submitContact.emit(this.contact);  // Emit the contact object to parent component
+  onSubmit() {
+    this.save.emit(this.localContact);
+    this.localContact = {
+      id: 0,
+      fName: '',
+      lName: '',
+      phoneNumber: '',
+      email: ''
+    };
   }
-}
 }

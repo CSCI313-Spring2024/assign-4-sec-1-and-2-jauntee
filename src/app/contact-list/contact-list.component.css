@@ -1,0 +1,36 @@
+.card {
+  border: none;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-text small {
+  color: #6c757d;
+}
+
+button.btn-warning,
+button.btn-danger {
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+}
+
+button.btn-warning:hover {
+  background-color: #d39e00;
+  border-color: #c69500;
+}
+
+button.btn-danger:hover {
+  background-color: #bd2130;
+  border-color: #b21f2d;
+}
